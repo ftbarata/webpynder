@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div class="page-header-novo">
+        <h4>{{ name }}</h4>
+</div>
+
+{% for i in photo_list %}
+    <div class="gallery">
+        <a href="{{i}}"><img src="{{ i }}" class="img-thumbnail-novo" alt="Foto."></a>
+    <!--<div class="desc">Add a description of the image here</div>-->
+    </div>
+{% endfor %}
+
+<a href="{% url 'nope_view' user_id %}" class="btn btn-lg btn-danger">Nope</a>
+<a href="{% url 'detail_view' user_id %}" class="btn btn-lg btn-info">Fotos extras</a>
+<a href="{% url 'like_view' user_id %}" class="btn btn-lg btn-success">Like</a>
+<a href="{% url 'super_like_view' user_id %}" class="btn btn-lg btn-primary">Super Like</a>
+{% endblock %}
